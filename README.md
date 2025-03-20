@@ -1,16 +1,15 @@
 ﻿# Titanic_surival_project_tl
-$$ P(Y=1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n)}} $$
+
 ## Mathematical Framework
 
 The logistic regression hypothesis function is given by:
-
 $$
 \hat{Y} = \frac{1}{1 + e^{-Z}}
 $$
 
 where:
 
-- \( \hat{Y} \) → predicted value  
+- \$$( \hat{Y} \)$$ → predicted value  
 - \( X \) → Input variable  
 - \( w \) → weight  
 - \( b \) → bias  
@@ -33,5 +32,28 @@ b = b - \alpha \cdot db
 $$
 
 ### **Learning Rate**
-Learning rate \( \alpha \) is a tuning parameter that determines the step size at each iteration while moving toward the minimum of the loss function.
+Learning rate is a tuning parameter that determines the step size at each iteration while moving toward the minimum of the loss function.
+
+### **Derivatives:**
+
+The gradients for weight \( w \) and bias \( b \) are calculated as:
+
+$$
+dw = \frac{1}{m} \sum ( \hat{Y} - Y ) \cdot X
+$$
+
+$$
+db = \frac{1}{m} \sum ( \hat{Y} - Y )
+$$
+
+where:
+
+- \( m \) → number of training examples  
+- \$$( \hat{Y} \)$$ → predicted value  (can range from 0 to 1)
+- \( Y \) → actual value  
+- \( X \) → input variable
+
+
+
+
 
