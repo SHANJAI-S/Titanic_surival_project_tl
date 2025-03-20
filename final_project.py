@@ -10,7 +10,9 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 
 
 # Load Titanic dataset
-titanic_data = pd.read_csv(r'C:\Users\sshan\Downloads\train.csv')
+print("download the train.csv and copy the path")
+file_path = input("Enter the full path of the CSV file: ").strip()
+titanic_data = pd.read_csv(file_path)
 
 # Display first few rows of the dataset
 '''print(titanic_data.head())'''
