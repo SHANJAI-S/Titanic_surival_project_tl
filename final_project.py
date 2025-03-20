@@ -1,7 +1,5 @@
-import numpy as np
+
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
@@ -15,10 +13,10 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 titanic_data = pd.read_csv(r'C:\Users\sshan\Downloads\train.csv')
 
 # Display first few rows of the dataset
-print(titanic_data.head())
+'''print(titanic_data.head())'''
 
 # Display dataset shape
-print("Dataset shape:", titanic_data.shape)
+'''print("Dataset shape:", titanic_data.shape)'''
 
 # Drop unnecessary columns
 titanic_data = titanic_data.drop(columns=['Cabin'], axis=1, errors='ignore')
@@ -28,15 +26,15 @@ titanic_data['Embarked'] = titanic_data['Embarked'].fillna(titanic_data['Embarke
 titanic_data['Age'] = titanic_data['Age'].fillna(titanic_data['Age'].mean())
 
 # Display missing values count
-print("Missing values count:")
-print(titanic_data.isnull().sum())
+'''print("Missing values count:")'''
+'''print(titanic_data.isnull().sum())'''
 
 # Encode categorical values
 titanic_data = titanic_data.replace(
     {'Sex': {'male': 0, 'female': 1}, 'Embarked': {'S': 0, 'C': 1, 'Q': 2}}).infer_objects(copy=False)
 
 # Display first few rows after encoding
-print(titanic_data.head())
+'''print(titanic_data.head())'''
 
 # Feature selection
 x = titanic_data.drop(columns=['PassengerId', 'Survived', 'Name', 'Ticket'])
@@ -46,8 +44,8 @@ y = titanic_data['Survived']
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
 
 # Display shape of training and test sets
-print("Training set shape:", x_train.shape, y_train.shape)
-print("Test set shape:", x_test.shape, y_test.shape)
+'''print("Training set shape:", x_train.shape, y_train.shape)
+print("Test set shape:", x_test.shape, y_test.shape)'''
 
 # Feature Scaling
 scaler = StandardScaler()
@@ -96,7 +94,6 @@ x_test_prediction = model.predict(x_test)
 test_data_accuracy = accuracy_score(y_test, x_test_prediction)
 print("Test Accuracy:", test_data_accuracy)
 # Compute precision, recall, and F1-score
-print("Debug: Reached before precision calculation")
 precision = precision_score(y_test, x_test_prediction)
 recall = recall_score(y_test, x_test_prediction)
 f1 = f1_score(y_test, x_test_prediction)
