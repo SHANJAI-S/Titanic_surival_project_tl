@@ -66,12 +66,16 @@ where:
 
 # Challenges faced during working on this project
 1.first i thought knowing basic python (for loop etc) is more than enough for my project  but after working on it only i got to know what all the things are basic
+
 2.i was struggling to make mathmetical framework in readme but somehow managed to make it
+
 3. learning git and pushing my file to it was the hardest challenge i faced , everytime i tried  i got error only but after so much help from chatgpt i done it
 
 # Setup 
 1.Clone the repository 
-2.go to the respected directory 
+
+2.go to the respected directory
+
 3.makesure install the listed dependencies installed 
 
 -numpy 
